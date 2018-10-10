@@ -24,6 +24,11 @@ public class RegisterTask {
 		this.registerAppObject.getSubscriptionCheckbox().click();
 	}
 	
+	public void sendRegisterForm()
+	{
+		this.registerAppObject.getSubmitButton().click();
+	}
+	
 /*	public void startNewRegistration() {
 		this.registerAppObject.getRegisterNewAccountButton().click();
 	}

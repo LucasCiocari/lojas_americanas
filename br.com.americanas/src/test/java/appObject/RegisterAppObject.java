@@ -56,7 +56,7 @@ public class RegisterAppObject {
 	}
 	
 	public WebElement getSubmitButton() {
-		return this.driver.findElement(By.className("btn btn-primary submit-button  cadastroForm-submit"));
+		return this.driver.findElement(By.xpath("//*[@id=\"root\"]/div/div[2]/form/button"));
 	}
 	
 	

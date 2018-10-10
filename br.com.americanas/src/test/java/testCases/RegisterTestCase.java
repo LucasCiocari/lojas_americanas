@@ -35,6 +35,7 @@ public class RegisterTestCase {
 	public void testMain() {
 		this.register.FillForm("lucasciocari@gmail.com", "jjeegio0g", "59684354054", 
 				"Jose Maria Azevedo", "59403400", "66049569543");
+		this.register.sendRegisterForm();
 	}
 	
 	
