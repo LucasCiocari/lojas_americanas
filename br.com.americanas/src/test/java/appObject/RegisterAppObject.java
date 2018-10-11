@@ -65,16 +65,16 @@ public class RegisterAppObject {
 	
 	
 	
-	public WebElement getRegisterNewAccountButton()
+/*	public WebElement getRegisterNewAccountButton()
 	{
 		By class_name = By.xpath("//*[@id=\"h_user\"]/span[2]/div/a[2]");
+		wait.until(presenceOfElementLocated(class_name));
 		return this.driver.findElement(class_name);
 	}
 	
 	public WebElement getUserIcon() {
 		return this.driver.findElement(By.id("h_usr-link"));
-	}
+	}*/
 	
 	
 }
-

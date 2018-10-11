@@ -29,12 +29,12 @@ public class RegisterTask {
 		this.registerAppObject.getSubmitButton().click();
 	}
 	
-	public void startNewRegistration() {
+/*	public void startNewRegistration() {
 		this.registerAppObject.getRegisterNewAccountButton().click();
 	}
 	
 	public void openLoginAndRegistrationMenu() {
 		this.registerAppObject.getUserIcon().click();
-	}
+	}*/
 	
 }
