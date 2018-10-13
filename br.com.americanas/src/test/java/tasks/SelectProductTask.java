@@ -22,4 +22,14 @@ public class SelectProductTask {
 	{
 		this.selectProductAppObject.getFirstProduct().click();
 	}
+	
+	public void sendThisPackageTo(String CEP) {
+		this.selectProductAppObject.getCEPField().sendKeys(CEP);
+	}
+	
+	public void addToCart()
+	{
+		this.selectProductAppObject.getBuyButton().click();
+		this.selectProductAppObject.getContinueButton().click();
+	}
 }

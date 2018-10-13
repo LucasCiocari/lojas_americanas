@@ -36,4 +36,9 @@ public class SelectProductAppObject {
 	public WebElement getBuyButton() {
 		return this.driver.findElement(By.id("btn-buy"));
 	}
+
+	public WebElement getContinueButton()
+	{
+		return this.driver.findElement(By.id("btn-continue"));
+	}
 }

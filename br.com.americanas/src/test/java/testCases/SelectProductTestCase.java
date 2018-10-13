@@ -28,13 +28,15 @@ public class SelectProductTestCase {
 		this.selectProduct.MakeASearchFor("Fone JBL");
 	
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		this.selectProduct.clickOnFirstProduct();
+		this.selectProduct.sendThisPackageTo("91260010");
+		this.selectProduct.addToCart();
 		
 	}
 	
