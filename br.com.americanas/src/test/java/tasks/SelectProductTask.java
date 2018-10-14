@@ -42,8 +42,9 @@ public class SelectProductTask {
 		this.selectProductAppObject.getBuyButton().click();
 	}
 	
-	public String finalPrice() {
-		return this.selectProductAppObject.getFinalProductValue().getText();
+	public String finalValues() {
+		return this.selectProductAppObject.getFinalValue().getText();
+		
 	}
 	
 }

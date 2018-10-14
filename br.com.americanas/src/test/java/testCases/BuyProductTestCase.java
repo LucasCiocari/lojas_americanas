@@ -1,7 +1,5 @@
 package testCases;
 
-import javax.sound.midi.Soundbank;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,8 +19,6 @@ public class BuyProductTestCase {
 	private LoginTask login;
 	private SelectProductTask selectProduct;
 	
-	private String testData;
-	
 	@Before
 	public void SetupTest() {
 		WebDriverManager.chromedriver().setup();
@@ -34,7 +30,9 @@ public class BuyProductTestCase {
 	}
 	
 	@Test
-	public void testMain() {
+	public void testMain(){
+		
+		String currentHandle = this.driver.getWindowHandle();
 		
 		this.selectProduct.MakeASearchFor("videogames");
 		this.selectProduct.clickOnFirstProduct();
@@ -46,7 +44,6 @@ public class BuyProductTestCase {
 		//this.buyProduct.goToCart();
 		this.selectProduct.goToLogin();
 		
-		String currentHandle = this.driver.getWindowHandle();
 			
 		this.login.clickFBButton();
 		
@@ -56,9 +53,9 @@ public class BuyProductTestCase {
 		this.login.loginWithFacebook("testess2b20182@gmail.com", "s2b2018/2");
 		
 		driver.switchTo().window(currentHandle);
+
 		
-		testData = this.selectProduct.finalPrice();
-		System.out.println(testData);
+		System.out.println(this.selectProduct.finalValues().getClass());
 		
 		
 	}

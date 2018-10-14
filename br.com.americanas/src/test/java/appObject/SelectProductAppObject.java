@@ -70,40 +70,8 @@ public class SelectProductAppObject {
 		return this.driver.findElement(By.id("buy-button"));
 	}
 	
-	public WebElement getBilletOptionButton()
+	public WebElement getFinalValue()
 	{
-		return this.driver.findElement(By.xpath("/html/body/section/div"
-								+ "/section/payment-options-menu/section/div"
-								+ "/div/nav/ul/li[4]/a/span[2]"));
-	}
-
-	public WebElement getPayButton()
-	{
-		return this.driver.findElement(By.id("bank-slip-submit"));
-	}
-	
-	public WebElement getFinalProductValue()
-	{
-		return this.driver.findElement(By.cssSelector("class=[text-right text-lg ng-binding ng-scope]"));
-	}
-
-	public WebElement getFreightValue()
-	{
-		return this.driver.findElement(By.id("purchase-freight-summary"));
-	}
-	
-	public WebElement getTotalValue()
-	{
-		return this.driver.findElement(By.id("summary-total-amount"));
-	}
-	
-	public WebElement getEmailValue()
-	{
-		return this.driver.findElement(By.id("purchase-email-customer"));
-	}
-	
-	public WebElement getPaymentType()
-	{
-		return this.driver.findElement(By.className("--noTextTransformation ng-binding"));
+		return this.driver.findElement(By.className("col-xs-2 text-right ng-binding"));
 	}
 }
