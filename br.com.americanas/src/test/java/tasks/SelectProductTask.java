@@ -24,12 +24,26 @@ public class SelectProductTask {
 	}
 	
 	public void sendThisPackageTo(String CEP) {
-		this.selectProductAppObject.getCEPField().sendKeys(CEP);
+		this.selectProductAppObject.getCEPField1().sendKeys(CEP);
 	}
 	
 	public void addToCart()
 	{
-		this.selectProductAppObject.getBuyButton().click();
+		this.selectProductAppObject.getBuyButton1().click();
 		this.selectProductAppObject.getContinueButton().click();
 	}
+	
+	public void goToCart() {
+		this.selectProductAppObject.getCartDropdown().click();
+		this.selectProductAppObject.getShowCartButton().click();
+	}
+	
+	public void goToLogin() {
+		this.selectProductAppObject.getBuyButton().click();
+	}
+	
+	public String finalPrice() {
+		return this.selectProductAppObject.getFinalProductValue().getText();
+	}
+	
 }

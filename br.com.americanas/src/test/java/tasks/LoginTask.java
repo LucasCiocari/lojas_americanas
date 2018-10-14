@@ -22,5 +22,17 @@ private LoginAppObject loginAppObject;
 		this.loginAppObject.getLoginButton().click();
 	}
 	
+	public void loginWithFacebook(String email, String password)
+	{
+		this.loginAppObject.getEmailFieldOfFacebookLogin().sendKeys(email);;
+		this.loginAppObject.getPasswordFieldOfFacebookLogin().sendKeys(password);;
+		this.loginAppObject.getLoginButtonOfFacebookLogin().click();
+	}
+	
+	public void clickFBButton()
+	{
+		this.loginAppObject.getFacebookLoginButton().click();		
+	}
+	
 
 }
