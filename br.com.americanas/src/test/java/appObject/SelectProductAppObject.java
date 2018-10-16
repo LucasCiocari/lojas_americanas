@@ -33,7 +33,7 @@ public class SelectProductAppObject {
 		return this.driver.findElement(By.id("input-freight-product"));
 	}
 	
-	public WebElement getOKButton() {
+	public WebElement getOKCEPButton() {
 		return this.driver.findElement(By.id("bt-freight-product"));
 	}
 	
@@ -79,4 +79,44 @@ public class SelectProductAppObject {
 		wait.until(presenceOfElementLocated(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tbody/tr[1]/td[2]")));
 		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tbody/tr[1]/td[2]"));
 	}
+	
+	public WebElement getFinalFreight()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tbody/tr[3]/td[2]"));
+	}
+	public WebElement getFinalTotalValue()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tfoot/tr[2]/td[2]/strong"));
+	}
+	public WebElement getFinalName()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/div/section/div/div/dl/dt"));
+	}
+	
+	public WebElement getFinalAdress()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/div/section/div/div/dl/dd[1]"));
+	}
+	public WebElement getFinalNeighbourhood()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/div/section/div/div/dl/dd[2]"));
+	}
+	public WebElement getFinalCity()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/div/section/div/div/dl/dd[3]"));
+	}
+	public WebElement getFinalCEP()
+	{
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/div/section/div/div/dl/dd[4]"));
+	}
+	public WebElement getValueBeforeBuy()
+	{
+		return this.driver.findElement(By.className("sales-price"));
+	}
+	public WebElement getFreightBeforeBuy() {
+		wait.until(presenceOfElementLocated(By.className("freight-option-default")));
+
+		return this.driver.findElement(By.className("freight-option-default"));
+	}
+
 }
