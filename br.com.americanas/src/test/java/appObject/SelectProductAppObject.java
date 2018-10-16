@@ -1,16 +1,20 @@
 package appObject;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SelectProductAppObject {
 
 	private WebDriver driver;
+	private WebDriverWait wait;
 	
 	public SelectProductAppObject(WebDriver driver)
 	{
 		this.driver = driver;
+		wait = new WebDriverWait(driver, 10);
 	}
 	
 	public WebElement getSearchBar() {
@@ -39,7 +43,7 @@ public class SelectProductAppObject {
 
 	public WebElement getContinueButton()
 	{
-		return this.driver.findElement(By.id("btn-continue"));
+		return this.driver.findElement(By.id("buy-button"));
 	}
 	
 
@@ -72,6 +76,7 @@ public class SelectProductAppObject {
 	
 	public WebElement getFinalValue()
 	{
-		return this.driver.findElement(By.className("col-xs-2 text-right ng-binding"));
+		wait.until(presenceOfElementLocated(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tbody/tr[1]/td[2]")));
+		return this.driver.findElement(By.xpath("//*[@id=\"ng-app\"]/body/section/div/section/div[1]/payment-summary/section/div/table/tbody/tr[1]/td[2]"));
 	}
 }

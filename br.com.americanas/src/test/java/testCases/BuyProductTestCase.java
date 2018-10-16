@@ -23,9 +23,11 @@ public class BuyProductTestCase {
 	public void SetupTest() {
 		WebDriverManager.chromedriver().setup();
 		this.driver = new ChromeDriver();
+		this.driver.manage().window().maximize();
 		this.driver.get("https://www.americanas.com.br");
 		this.login = new LoginTask(driver);
 		this.selectProduct = new SelectProductTask(driver);	
+		
 		
 	}
 	
@@ -34,7 +36,7 @@ public class BuyProductTestCase {
 		
 		String currentHandle = this.driver.getWindowHandle();
 		
-		this.selectProduct.MakeASearchFor("videogames");
+		this.selectProduct.MakeASearchFor("bola");
 		this.selectProduct.clickOnFirstProduct();
 		this.selectProduct.sendThisPackageTo("91260010");
 		this.selectProduct.addToCart();
@@ -55,7 +57,7 @@ public class BuyProductTestCase {
 		driver.switchTo().window(currentHandle);
 
 		
-		System.out.println(this.selectProduct.finalValues().getClass());
+		System.out.println(this.selectProduct.finalValues());
 		
 		
 	}
