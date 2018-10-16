@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import tasks.LoginTask;
 import tasks.SelectProductTask;
+import verificationPoint.FinalValuesVerificationPoint;
 
 
 
@@ -20,7 +21,7 @@ public class BuyProductTestCase {
 	private WebDriver driver;
 	private LoginTask login;
 	private SelectProductTask selectProduct;
-	
+	private FinalValuesVerificationPoint verificationPoint;
 	@Before
 	public void SetupTest() {
 		WebDriverManager.chromedriver().setup();
@@ -29,21 +30,17 @@ public class BuyProductTestCase {
 		this.driver.get("https://www.americanas.com.br");
 		this.login = new LoginTask(driver);
 		this.selectProduct = new SelectProductTask(driver);	
-		
-		
+		this.verificationPoint = new FinalValuesVerificationPoint(driver);
 	}
 	
 	@Test
 	public void testMain(){
 		
 		String currentHandle = this.driver.getWindowHandle();		
-		this.selectProduct.MakeASearchFor("maiara e maraisa");
+		this.selectProduct.MakeASearchFor("pneu");
 		this.selectProduct.clickOnFirstProduct();
 		this.selectProduct.sendThisPackageTo("91260010");		
 		ArrayList<String> resultsBeforeBuy = this.selectProduct.getValuesBeforeBuy();		
-/*		for (int i = 0; i < resultsBeforeBuy.size(); i++) {
-			System.out.println(resultsBeforeBuy.get(i));
-		}*/
 		
 		this.selectProduct.addToCart();	
 		this.driver.get("https://sacola.americanas.com.br/#/basket");			
@@ -53,11 +50,9 @@ public class BuyProductTestCase {
 		    driver.switchTo().window(winHandle);		}		
 		this.login.loginWithFacebook("testess2b20182@gmail.com", "s2b2018/2");		
 		driver.switchTo().window(currentHandle);
-		ArrayList<String> results = this.selectProduct.finalValues();		
-/*		for (int i = 0; i < results.size(); i++) {
-			System.out.println(results.get(i));
-		}
-		*/
+		ArrayList<String> results = this.selectProduct.finalValues();	
+		
+		this.verificationPoint.checkFinalValues(resultsBeforeBuy, results);
 	}
 	
 	
